@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        传递属性
+        <hr/>
+        <h2>form1</h2>
+        <h:form enctype="multipart/form-data">
+            placeholde使用 姓名：<h:inputText id="name" pt:placeholder="Ehter name"/><br/>
+            年龄：<h:inputText id="age" pt:type="number"/>
+            日期：<h:inputText id="both" pt:type="date"/><br/>
+            <h:inputSecret pt:autofocus="true"/><br/>
+            <h:commandButton value="提交"/>
+            <hr/>
+            <h:inputFile value="#{fileUploadBean.file}"/>
+            <h:commandButton value="上传文件" action="#{fileUploadBean.upload()}"/>
+        </h:form>  
+        
+        <hr/>
+        <h2>form2</h2>
+        
+        <h:form>
+            验证f:validateLength:
+            <h:inputText>
+                <f:validateLength maximum="10" minimum="5" />
+            </h:inputText>
+            <br/>
+            验证f:convertNumber:
+            <h:inputText>
+                <f:convertNumber/>
+            </h:inputText>
+            <br/>
+            验证f:valueChangeListener:
+            <h:inputText>
+                <f:valueChangeListener/>
+            </h:inputText>
+            <br/>
+            <h:commandButton value="提交"/>
+        </h:form>
+    </h:body>
+</html>
+

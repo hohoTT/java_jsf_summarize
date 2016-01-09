@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets<hr/>
+        <h:form >
+            <h:commandButton value="提交" action="haha.html"/><br/>
+            <h:commandLink value="百度" action="http://baidu.com/"/><br/>
+            
+            <h:selectBooleanCheckbox>
+                <h:outputText value="first"/>
+            </h:selectBooleanCheckbox>
+            <h:selectBooleanCheckbox>
+                <h:outputText value="second"/>
+            </h:selectBooleanCheckbox><br/>
+        
+            <h:outputText value="selectOneListbox"/>
+            <h:selectOneListbox size="1">
+                <f:selectItem itemLabel="first" itemValue="first"/>
+                <f:selectItem itemLabel="second" itemValue="second"/>
+                <f:selectItem itemLabel="third" itemValue="third"/>
+                <f:selectItem itemLabel="fourth" itemValue="fourth"/>
+            </h:selectOneListbox><br/>
+            
+            <h:outputText value="selectOneListbox"/>
+            <h:selectOneListbox>
+                <f:selectItem itemLabel="first" itemValue="first"/>
+                <f:selectItem itemLabel="second" itemValue="second"/>
+                <f:selectItem itemLabel="third" itemValue="third"/>
+                <f:selectItem itemLabel="fourth" itemValue="fourth"/>
+            </h:selectOneListbox><br/>
+            
+            <h:outputText value="selectOneMenu"/>
+            <h:selectOneMenu>
+                <f:selectItem itemLabel="first" itemValue="first"/>
+                <f:selectItem itemLabel="second" itemValue="second"/>
+                <f:selectItem itemLabel="third" itemValue="third"/>
+                <f:selectItem itemLabel="fourth" itemValue="fourth"/>
+            </h:selectOneMenu>
+            <hr/>
+            
+            <h:outputText value="selectOneRadio"/>
+            <h:selectOneRadio layout="pageDirection" border="1" title="hoho">
+                <f:selectItem itemLabel="first" itemValue="first"/>
+                <f:selectItem itemLabel="second" itemValue="second"/>
+                <f:selectItem itemLabel="third" itemValue="third"/>
+                <f:selectItem itemLabel="fourth" itemValue="fourth"/>
+            </h:selectOneRadio>
+            <hr/>
+            
+            <h:outputText value="selectManyListbox"/>
+            <h:selectManyListbox>
+                <f:selectItem itemLabel="first" itemValue="first"/>
+                <f:selectItem itemLabel="second" itemValue="second"/>
+                <f:selectItem itemLabel="third" itemValue="third"/>
+                <f:selectItem itemLabel="fourth" itemValue="fourth"/>
+            </h:selectManyListbox>
+            <hr/>
+            
+            <h:outputText value="selectManyMenu"/>
+            <h:selectManyMenu>
+                <f:selectItem itemLabel="first" itemValue="first"/>
+                <f:selectItem itemLabel="second" itemValue="second"/>
+                <f:selectItem itemLabel="third" itemValue="third"/>
+                <f:selectItem itemLabel="fourth" itemValue="fourth"/>
+            </h:selectManyMenu>
+            <hr/>
+            
+            <h:outputText value="selectManyCheckbox"/>
+            <h:selectManyCheckbox border="1" title="hhh">
+                <f:selectItem itemLabel="first" itemValue="first"/>
+                <f:selectItem itemLabel="second" itemValue="second"/>
+                <f:selectItem itemLabel="third" itemValue="third"/>
+                <f:selectItem itemLabel="fourth" itemValue="fourth"/>
+            </h:selectManyCheckbox>
+            <hr/>
+            
+            
+            <h:outputText value="panelGrid"/>
+            <h:panelGrid 
+                columns="3" border="1"
+                bgcolor="#00FF00" cellpadding="10px"
+                cellspacing="10px" frame="hsides"
+                rules="all">
+                <h:outputText value="00"/>
+                <h:outputText value="01"/>
+                <h:outputText value="02"/>
+                <h:outputText value="10"/>
+                <h:outputText value="11"/>
+                <h:outputText value="12"/>
+                
+                <h:panelGroup>
+                    <h:outputText value="20"/>
+                    |
+                    <h:outputText value="21"/>
+                </h:panelGroup>
+                <h:outputText value="22"/>
+                <h:outputText value="31"/>
+            </h:panelGrid>
+            <hr/>
+            
+            
+        </h:form>
+        
+        <h:form>
+            <h:message for="first"/>
+            <h:messages/>
+            <h:inputText id="first" required="true" requiredMessage="no name"/>
+            <h:inputText required="true" requiredMessage="no name"/>
+            <h:inputText required="true" requiredMessage="no name"/>
+            <h:commandButton value="提交"/>
+        </h:form>
+        <hr/>
+        
+        <h:dataTable 
+            value="#{studentsbean.students}"
+            var="student"
+            border="1"
+            first="5"
+            rows="4">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="name"/>
+                </f:facet>
+                
+                <h:outputText value="#{student.name}"/>
+                
+                <f:facet name="footer">
+                    <h:outputText value="last name"/>
+                </f:facet>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="age"/>
+                </f:facet>
+                
+                <h:outputText value="#{student.age}"/>
+                
+                <f:facet name="footer">
+                    <h:outputText value="last age"/>
+                </f:facet>
+            </h:column>
+            
+        </h:dataTable>
+    </h:body>
+</html>
+
