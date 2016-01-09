@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>validate info</h1>
+        <hr/>
+        <h:form>
+            验证字符串 ： 
+            <h:inputText>
+                <c:validateLength minimum="3" maximum="6" />
+                <c:validateLongRange minimum="200" maximum="50000" />
+            </h:inputText><br/>
+            验证字符串(正则表达式) ： 
+            <h:inputText>
+                <c:validateRegex pattern="[0-9]*"/>
+            </h:inputText><br/>
+            验证字符串(必需性) ： 
+            <h:inputText>
+                <c:validateRequired />
+            </h:inputText><br/>
+            
+            验证电话(手机)号码 ： 
+            <h:inputText>
+                <c:validator validatorId="fnv_2"/>
+            </h:inputText><br/>
+            <h:commandButton value="提交"/>
+        </h:form>
+    </h:body>
+</html>
+

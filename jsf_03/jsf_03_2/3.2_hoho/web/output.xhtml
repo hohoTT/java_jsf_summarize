@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>output info</h1>
+        <hr />
+        Movile Number : <h:outputText value="#{payment.movileNo}"/><br/>
+        amount : <h:outputText value="#{payment.amount}" >
+                    <c:convertNumber  type="currency"
+                                      currencySymbol="&pound;"
+                                      maxFractionDigits="5"
+                                      minFractionDigits="3"
+                                      maxIntegerDigits="6"
+                                      minIntegerDigits="2"
+                                      integerOnly="true"
+                                      parent="##.000"/>
+                </h:outputText><br/>
+                到期时间 : 
+                <h:outputText value="#{payment.expDate}" >
+                    <c:convertDateTime dateStyle="default" />
+                </h:outputText>
+    </h:body>
+</html>
+

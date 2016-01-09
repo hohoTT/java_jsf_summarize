@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>介绍转换器</title>
+        <style>
+            h1, h2, h3 {
+                margin-top: 20px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h1>介绍转换器</h1>
+        <hr />
+
+        <h2>使用标准转换器</h2>
+        <hr />
+        <h:form>
+            Mobile Number: <h:inputText value="#{payment.mobileNo}" /> <br />
+            Enter Amount：<h:inputText value="#{payment.amount}"/> <br />
+            Credit/Debit Card Number：<h:inputText value="#{payment.cnNumber}" converter="NumConverter"/> <br />
+            ExpDate：<h:inputText value="#{payment.expDate}" converterMessage="Enter date as 'dd-MM-yyyy', such as 20-04-2011" >
+                <c:convertDateTime type="date" pattern="dd-MM-yyyy" />
+                <c:validator validatorId="customValidator" />
+            </h:inputText><br />
+            <h:commandButton value="提交" action="output" />
+        </h:form>
+
+    </h:body>
+</html>
+
