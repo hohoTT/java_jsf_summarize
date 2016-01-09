@@ -1,0 +1,17 @@
+-- 书籍详细信息
+CREATE TABLE details (
+    id varchar(3) NOT NULL,
+    bookname varchar(20) NOT NULL,
+    authorname varchar(20) NOT NULL,
+    publishingyear varchar(10) DEFAULT NULL,
+    price varchar(10) NOT NULL,
+    description varchar(100) DEFAULT NULL,
+    isbn varchar(20) NOT NULL,
+
+    PRIMARY KEY (id) 
+);
+
+INSERT INTO details VALUES 
+('1', 'Java Web Server', 'hoho', '2015', '10000￥', '学习Java Web Server', '978-619 978-954' ),
+('2', 'JSP & Server', 'haha', '2015', '20000￥', '学习JSP & Server', '978-7' ),
+('3', 'Java Server Face', 'hehe', '2015', '50000￥', '学习Java Server Face', '978-606 978-973' );
