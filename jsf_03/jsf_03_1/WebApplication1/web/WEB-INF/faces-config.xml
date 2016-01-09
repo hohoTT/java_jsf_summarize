@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <managed-bean>
+        <managed-bean-class>com.wt.bean.orderBean</managed-bean-class>
+        <managed-bean-name>orderBean</managed-bean-name>
+        <managed-bean-scope>flow</managed-bean-scope>
+        <managed-property>
+            <property-name>itemCount</property-name>
+            <property-class>java.lang.String</property-class>
+            <value>12321</value>
+        </managed-property>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-class>com.wt.bean.RegistrationForm</managed-bean-class>
+        <managed-bean-name>registrationForm</managed-bean-name>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>name</property-name>
+            <property-class>string</property-class>
+            <value>hohoTT</value>
+        </managed-property>
+    </managed-bean>
+</faces-config>
