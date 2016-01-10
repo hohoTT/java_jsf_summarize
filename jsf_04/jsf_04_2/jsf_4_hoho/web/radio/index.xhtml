@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>This is Page radio/index</h1>
+        <hr/>
+        <h:form>
+            <h:selectOneRadio value="#{navigationBean.value}" >
+                <f:selectItem itemLabel="A页面" itemValue="A" />
+                <f:selectItem itemLabel="B页面" itemValue="B" />
+                <f:selectItem itemLabel="C页面" itemValue="C" />
+                <f:selectItem itemLabel="D页面" itemValue="" />
+            </h:selectOneRadio>
+            <h:commandButton value="进入某页面" action="#{navigationBean.selectItem()}" />
+        </h:form>
+    </h:body>
+</html>
+
