@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>/dynamic/*</from-view-id>
+        <navigation-case>
+            <from-action>#{userBean.checkInfo()}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/dynamic/welcome.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{userBean.checkInfo()}</from-action>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/dynamic/failed.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/radio/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{bean.selectItem()}</from-action>
+            <if>#{bean.flagA}</if>
+            <to-view-id>/radio/a.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{bean.selectItem()}</from-action>
+            <if>#{bean.flagB}</if>
+            <to-view-id>/radio/b.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{bean.selectItem()}</from-action>
+            <if>#{bean.flagC}</if>
+            <to-view-id>/radio/c.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{bean.selectItem()}</from-action>
+            <to-view-id>/radio/default.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

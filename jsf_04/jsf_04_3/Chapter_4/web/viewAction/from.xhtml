@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        this is "From" page.
+        <h:form>
+        </h:form>
+
+        
+        <h1>方式1：写死到h:link标记中</h1>
+        <hr />
+        <h:link outcome="to" value="导航到to页面(username=“xiaoming”，password是“mingxiao”)">
+            <f:param name="username" value="xiaoming" />
+            <f:param name="password" value="mingxiao" />
+        </h:link>
+        <br />
+        <h:link outcome="to" value="导航到to页面(username=“username”，password是“password”)">
+            <f:param name="username" value="username" />
+            <f:param name="password" value="password" />
+        </h:link>
+        
+        
+        <h1>方式2：写死到form表单中</h1>
+        <hr />
+        <form action="to.xhtml">
+            username:<input type="text" name="username" /> <br />
+            password:<input type="text" name="password" /> <br />
+            <input type="submit" value="to页面" />
+        </form>
+        
+    </h:body>
+</html>
+
