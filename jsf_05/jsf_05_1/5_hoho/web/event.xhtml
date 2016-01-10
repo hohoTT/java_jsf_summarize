@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>This is Event Page</h1>
+        <hr/>
+        <h:form>
+            文本值 : 
+            <h:inputText>
+                <f:valueChangeListener type="com.wt.Event.MyValueChangeListener" />
+                <f:phaseListener type="com.wt.Event.MyPhaseListener" />
+            </h:inputText> <br/>
+            
+            <h:selectOneMenu>
+                <f:selectItem itemLabel="项目A" itemValue="A" />
+                <f:selectItem itemLabel="项目B" itemValue="B" />
+                <f:selectItem itemLabel="项目C" itemValue="C" />
+                <f:valueChangeListener type="com.wt.Event.MyValueChangeListener" />
+            </h:selectOneMenu>
+            <br/>
+            <h:commandButton value="提交表单" />
+        </h:form>
+        
+        <h:form id="MyLinkForm">
+            <h:commandLink value="超链接" id="MyLink">
+                <f:actionListener type="com.wt.Event.MyActionListener" />
+            </h:commandLink>
+               
+        </h:form>
+        
+        <h:form>
+            <h:commandButton value="按钮" />
+        </h:form>
+    </h:body>
+</html>
+
